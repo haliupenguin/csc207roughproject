@@ -9,8 +9,8 @@ public class Manager extends Employee {
     // HashMap of all ingredients managers do not want the default amount for
     private static HashMap<String, Integer> overrideOrders = new HashMap<>();
 
-    public Manager(int id) {
-        super(id);
+    public Manager(int id, Restaurant restaurant) {
+        super(id, restaurant);
     }
 
     public void addIngredientOverride(String ingredient, int newOrderAmount) {

@@ -26,6 +26,14 @@ public class Inventory {
         }
     }
 
+    protected void restock(String ingredient, int amount) {
+        inventory.replace(ingredient, inventory.get(ingredient) + amount);
+    }
+
+    public int getAmountOf(String ingredient) {
+        return inventory.get(ingredient);
+    }
+
     // Returns false if the MenuItem cannot be made with the current inventory, true otherwise
     public boolean processMenuItem(MenuItem menuItem) {
         HashMap<String, Integer> toProcess = menuItem.getIngredients();
