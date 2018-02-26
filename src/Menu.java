@@ -18,4 +18,23 @@ public class Menu {
         }
     }
 
+    public String toString() {
+        StringBuilder toReturn = new StringBuilder("=== Menu ===\n");
+        for (MenuItem item : menuItems) {
+            toReturn.append(item.toString());
+            toReturn.append("    ");
+            toReturn.append(item.getPrice());
+            toReturn.append('\n');
+        }
+        return new String(toReturn);
+    }
+
+    public boolean equals(Object o) {
+        if (o instanceof Menu) {
+            Menu m = (Menu) o;
+            return menuItems.equals(m.menuItems);
+        }
+        return false;
+    }
+
 }

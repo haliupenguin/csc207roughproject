@@ -31,7 +31,7 @@ public class Manager extends Employee {
     }
 
     public String toString() {
-        return "Manager, id " + id;
+        return "Manager, id " + Integer.toString(id);
     }
 
 }

@@ -8,4 +8,8 @@ public class Employee {
         this.restaurant = restaurant;
     }
 
+    public String toString() {
+        return "Employee, id " + Integer.toString(id);
+    }
+
 }
