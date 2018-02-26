@@ -31,32 +31,48 @@ Chicken 3
 INVENTORY
 Bun
 108
+20
 Patty
 148
+20
 Lettuce
 165
+20
 Tomato
 137
+20
 Onion
 223
+20
 Mushroom
 224
+20
 Cheese
 236
+20
 Mayonnaise
 121
+20
 Potato
 258
+20
 Salt
 9999
+20
 Chicken
 209
+20
 Gravy
 83
+20
 TABLES
 20
 EMPLOYEES
-Servers: 4
-Cooks: 2
-Managers: 1
-Receivers: 1
+Servers
+4
+Cooks
+2
+Managers
+1
+Receivers
+1

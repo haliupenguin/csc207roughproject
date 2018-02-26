@@ -4,9 +4,9 @@ public class MenuItem {
 
     private HashMap<String, Integer> ingredients;
     private String name;
-    private float price;
+    private double price;
 
-    public MenuItem(String name, float price, HashMap<String, Integer> ingredients) {
+    public MenuItem(String name, double price, HashMap<String, Integer> ingredients) {
         this.name = name;
         this.price = price;
         this.ingredients = ingredients;
@@ -20,7 +20,7 @@ public class MenuItem {
         return ingredients;
     }
 
-    public float getPrice(){
+    public double getPrice(){
         return price;
     }
 
