@@ -15,6 +15,8 @@ public class Server extends Employee {
             order.remove(subtract);
         }
         table.addOrder(order);
+        System.out.println("NEW ORDER");
+        System.out.println(order);
         Cook.receiveOrder(order);
     }
 

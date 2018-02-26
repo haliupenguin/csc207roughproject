@@ -23,6 +23,8 @@ public class Cook extends Employee {
         if (cooking.indexOf(order) > -1) {
             order.setState("Filled");
             cooking.remove(order);
+            System.out.println("ORDER FILLED, AWAITING PICKUP");
+            System.out.println(order);
             cooked.add(order);
         }
     }
