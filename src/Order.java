@@ -43,12 +43,27 @@ public class Order {
         return state;
     }
 
+    public HashMap<String, Integer> getChanges() {
+        return changes;
+    }
+
     protected void setState(String newState) {
         this.state = newState;
     }
 
+    public boolean equals(Object o) {
+        if (o instanceof Order) {
+            Order order = (Order) o;
+            return (order.orderedItem.equals(orderedItem) && order.changes.equals(changes)
+                    && order.table.equals(table));
+        }
+        return false;
+    }
+
     public String toString() {
         StringBuilder toReturn = new StringBuilder(orderedItem.toString());
+        toReturn.append('\n');
+        toReturn.append(table.toString());
         toReturn.append('\n');
         if (changes.keySet().size() > 0) {
             toReturn.append("=== Changes ===\n");

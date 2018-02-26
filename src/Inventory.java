@@ -18,7 +18,7 @@ public class Inventory {
     }
 
     // Checks if any of the items are in need of reordering
-    public void checkInventory() throws IOException{
+    private void checkInventory() throws IOException{
         for (String ingredient : inventory.keySet()) {
             if (inventory.get(ingredient) < minimums.get(ingredient)) {
                 Manager.order(ingredient, 20);
@@ -34,9 +34,13 @@ public class Inventory {
         return inventory.get(ingredient);
     }
 
-    // Returns false if the MenuItem cannot be made with the current inventory, true otherwise
-    public boolean processMenuItem(MenuItem menuItem) {
+    // Returns false if the Order cannot be made with the current inventory, true otherwise
+    public boolean processOrder(Order order) throws IOException{
+        MenuItem menuItem = order.getOrderedItem();
         HashMap<String, Integer> toProcess = menuItem.getIngredients();
+        for (String ingredient : order.getChanges().keySet()) {
+            toProcess.replace(ingredient, toProcess.get(ingredient) + order.getChanges().get(ingredient));
+        }
         for (String ingredient : toProcess.keySet()) {
             if (inventory.get(ingredient) < toProcess.get(ingredient)) {
                 return false;
@@ -45,6 +49,7 @@ public class Inventory {
         for (String ingredient : toProcess.keySet()) {
             inventory.replace(ingredient, inventory.get(ingredient) - toProcess.get(ingredient));
         }
+        checkInventory();
         return true;
     }
 

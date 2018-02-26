@@ -10,6 +10,10 @@ public class Table {
         this.tableNum = tableNum;
     }
 
+    public void addOrder(Order order) {
+        orders.add(order);
+    }
+
     public String getBill() {
         StringBuilder toReturn = new StringBuilder("Table #" + tableNum);
         toReturn.append('\n');
@@ -24,5 +28,17 @@ public class Table {
         }
         toReturn.append("Total cost: " + totalCost);
         return new String(toReturn);
+    }
+
+    public boolean equals(Object o) {
+        if (o instanceof Table) {
+            Table t = (Table) o;
+            return tableNum == t.tableNum;
+        }
+        return false;
+    }
+
+    public String toString() {
+        return "Table number " + Integer.toString(tableNum);
     }
 }

@@ -17,6 +17,10 @@ public class Manager extends Employee {
         overrideOrders.put(ingredient, newOrderAmount);
     }
 
+    public void printInventory() {
+        System.out.println(restaurant.inventory.toString());
+    }
+
     public static void order(String ingredient, int needed) throws IOException {
         try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("requests.txt")))) {
             if (overrideOrders.keySet().contains(ingredient)) {
