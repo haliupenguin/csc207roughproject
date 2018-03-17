@@ -1,40 +1,47 @@
 import java.util.ArrayList;
 
+/**
+ * Represents the Menu of the restaurant
+ *
+ * The Menu contains all the MenuItems that customers can order
+ */
 public class Menu {
 
-    private ArrayList<MenuItem> menuItems;
+    private static ArrayList<MenuItem> items = new ArrayList<>();
 
-    public Menu(ArrayList<MenuItem> menuItems) {
-        this.menuItems = menuItems;
+    /**
+     * Adds an MenuItem to the Menu
+     *
+     * @param item the MenuItem to be added
+     */
+    public static void addItem(MenuItem item) {
+        items.add(item);
     }
 
-    public Menu() {
-        this(new ArrayList<>());
+    /**
+     * Returns all the items in the Menu
+     *
+     * @return the MenuItems on the Menu
+     */
+    public static ArrayList<MenuItem> getItems() {
+        return items;
     }
 
-    public void addMenuItem(MenuItem menuItem) {
-        if (!menuItems.contains(menuItem)) {
-            menuItems.add(menuItem);
+    /**
+     * Returns a String representation of the Menu
+     *
+     * The String contains the name of each MenuItem and its price
+     *
+     * @return a String representation fo the Menu
+     */
+    public static String menuString() {
+        StringBuilder result = new StringBuilder();
+
+        for (MenuItem item : items) {
+            result.append(item.toString());
+            result.append("\n");
         }
-    }
 
-    public String toString() {
-        StringBuilder toReturn = new StringBuilder("=== Menu ===\n");
-        for (MenuItem item : menuItems) {
-            toReturn.append(item.toString());
-            toReturn.append("    ");
-            toReturn.append(item.getPrice());
-            toReturn.append('\n');
-        }
-        return new String(toReturn);
+        return result.toString();
     }
-
-    public boolean equals(Object o) {
-        if (o instanceof Menu) {
-            Menu m = (Menu) o;
-            return menuItems.equals(m.menuItems);
-        }
-        return false;
-    }
-
 }

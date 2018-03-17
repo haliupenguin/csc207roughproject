@@ -1,66 +1,145 @@
 import java.io.IOException;
 import java.util.HashMap;
 
+/**
+ * Represents the restaurant's inventory.
+ * Contains all the ingredients available as well as their quantities, minimum quantity
+ * and default reorder quantity.
+ */
 public class Inventory {
-    private HashMap<String, Integer> inventory;
-    private HashMap<String, Integer> minimums; // the minimum number of each item in the inventory before needing
-                                               // to be reordered
 
-    public Inventory() {
-        this.inventory = new HashMap<>();;
-        this.minimums = new HashMap<>();
+    private static HashMap<String, Integer> inventory = new HashMap<>();
+    private static HashMap<String, Integer> minimums = new HashMap<>();
+    private static HashMap<String, Integer> defaultOrderAmounts = new HashMap<>();
+
+    /**
+     * Returns the inventory with each ingredient and its current quantity
+     *
+     * Method used to update the config file after the program ends
+     *
+     * @return a HashMap of each ingredient and its quantity
+     */
+    public static HashMap<String, Integer> getInventory() {
+        return inventory;
     }
 
-    // adds an ingredient to the inventory
-    public void addInventoryItem(String ingredient, int supply, int minimum) {
-        inventory.put(ingredient, supply);
+    /**
+     * Returns the minimum amounts required for each ingredient
+     *
+     * Method used to update the config file after the program ends.
+     *
+     * @return a HashMap of each ingredients minimum amount
+     */
+    public static HashMap<String, Integer> getMinimums() {
+        return minimums;
+    }
+
+    /**
+     * Returns the default order amounts for each ingredient.
+     *
+     * Method is used to update the config file after the program ends.
+     *
+     * @return a HashMap describing each ingredient's default order amount
+     */
+    public static HashMap<String, Integer> getDefaultOrderAmounts() {
+        return defaultOrderAmounts;
+    }
+
+  /**
+   * Adds a new ingredient to the Inventory with the ingredient's name, the initial number,
+   * the minimum quantity needed to be kept in inventory, and the default quantity that is ordered
+   * by the Manager.
+   *
+   * @param ingredient the name of the ingredient to be added
+   * @param quantity the initial quantity of the ingredient already in the Inventory
+   * @param minimum the minimum quantity of the ingredient in Inventory until it needs to be
+   *                ordered
+   * @param defaultOrderAmount the amount that the Manager will order once the Inventory amount
+   *                           falls below the minimum.
+   */
+    public static void addIngredient(String ingredient, int quantity, int minimum, int defaultOrderAmount) {
+        inventory.put(ingredient, quantity);
         minimums.put(ingredient, minimum);
+        defaultOrderAmounts.put(ingredient, defaultOrderAmount);
     }
 
-    // Checks if any of the items are in need of reordering
-    private void checkInventory() throws IOException{
+    /**
+     * Restocks the ingredient by the quantity received.
+     *
+     * @param ingredient the ingredient that is being restocked
+     * @param quantity   the number of units of the ingredient to be added into the Inventory
+     */
+    public static void restockIngredient(String ingredient, int quantity) {
+        inventory.replace(ingredient, inventory.get(ingredient) + quantity);
+    }
+
+    /**
+     * Checks the Inventory to see if any ingredient has fallen below the minimum amount. If
+     * an ingredient is below the minimum amount, then it tells the Manager to order the
+     * ingredient.
+     *
+     * @throws IOException if requests.txt cannot be written to
+     */
+    private static void checkInventory() throws IOException {
         for (String ingredient : inventory.keySet()) {
             if (inventory.get(ingredient) < minimums.get(ingredient)) {
-                Manager.order(ingredient, 20);
+                Manager.orderIngredients(ingredient, defaultOrderAmounts.get(ingredient));
             }
         }
     }
 
-    protected void restock(String ingredient, int amount) {
-        inventory.replace(ingredient, inventory.get(ingredient) + amount);
-    }
-
-    public int getAmountOf(String ingredient) {
-        return inventory.get(ingredient);
-    }
-
-    // Returns false if the Order cannot be made with the current inventory, true otherwise
-    public boolean processOrder(Order order) throws IOException{
-        MenuItem menuItem = order.getOrderedItem();
-        HashMap<String, Integer> toProcess = menuItem.getIngredients();
-        for (String ingredient : order.getChanges().keySet()) {
-            toProcess.replace(ingredient, toProcess.get(ingredient) + order.getChanges().get(ingredient));
-        }
-        for (String ingredient : toProcess.keySet()) {
-            if (inventory.get(ingredient) < toProcess.get(ingredient)) {
+    /**
+     * Processes a Cook cooking an Order by deducting the ingredients needed to make the Order
+     * from the Inventory. Returns a boolean stating whether it is possible to make the Order.
+     * If the Order is made, the Inventory checks itself to see if any ingredients need to be
+     * restocked
+     *
+     * If the order cannot be made from the supplies in the Inventory, then false is returned.
+     * Otherwise, true is returned.
+     *
+     * @param order the Order that is taking ingredients from the Inventory
+     * @return a boolean stating whether the Order could be made
+     * @throws IOException if an ingredient needs to be restocked and requests.txt cannot be
+     *                     written to
+     */
+    public static boolean processOrder(Order order) throws IOException {
+        checkInventory();
+        HashMap<String, Integer> needed = order.getIngredientsNeeded();
+        for (String ingredient : needed.keySet()) {
+            if (inventory.get(ingredient) < needed.get(ingredient)) {
                 return false;
             }
         }
-        for (String ingredient : toProcess.keySet()) {
-            inventory.replace(ingredient, inventory.get(ingredient) - toProcess.get(ingredient));
+        for (String ingredient : needed.keySet()) {
+            inventory.replace(ingredient, inventory.get(ingredient) - needed.get(ingredient));
         }
-        checkInventory();
         return true;
     }
 
-    public String toString() {
-        StringBuilder toReturn = new StringBuilder("=== Inventory === \n");
+    /**
+     * Changes the default order amount for an ingredient for when the ingredient falls below
+     * the minimum and needs a Manager to make an order for the ingredient.
+     *
+     * @param ingredient the ingredient whose default order amount is to be changed
+     * @param newDefault the new default order amount for the ingredient
+     */
+    public static void changeDefault(String ingredient, int newDefault) {
+        defaultOrderAmounts.replace(ingredient, newDefault);
+    }
+
+    /**
+     * Returns a String representation of the Inventory
+     *
+     * @return a String representation of the Inventory
+     */
+    public static String getStringRepresentation() {
+        StringBuilder result = new StringBuilder("Inventory Contents:");
         for (String ingredient : inventory.keySet()) {
-            toReturn.append(ingredient);
-            toReturn.append("    ");
-            toReturn.append(inventory.get(ingredient));
-            toReturn.append("\n");
+            result.append("\n");
+            result.append(ingredient);
+            result.append(": ");
+            result.append(inventory.get(ingredient));
         }
-        return new String(toReturn);
+        return result.toString();
     }
 }

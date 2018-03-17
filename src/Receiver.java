@@ -1,18 +1,37 @@
 import java.util.HashMap;
 
+/**
+ * Represents a receiver at the restaurant
+ *
+ * A receiver receives shipments of ingredients that are added into inventory
+ */
 public class Receiver extends Employee {
 
-    public Receiver(int id, Restaurant restaurant) {
-        super(id, restaurant);
+    /**
+     * Creates a new Receiver object
+     *
+     * @param id the ID of this Receiver
+     */
+    public Receiver(int id) {
+        super(id);
     }
 
-    public void receiveShipment(String ingredient, int amount) {
-        restaurant.inventory.restock(ingredient, amount);
+    /**
+     * Receives a shipment of an ingredient and adds it into Inventory
+     *
+     * @param ingredient the ingredient received
+     * @param quantity the quantity of the ingredient receieved
+     */
+    public void receive(String ingredient, int quantity) {
+        Inventory.restockIngredient(ingredient, quantity);
     }
 
-    public void receiveShipment(HashMap<String, Integer> shipment) {
-        for (String ingredient : shipment.keySet()) {
-            receiveShipment(ingredient, shipment.get(ingredient));
-        }
+    /**
+     * Returns the ID number of this Employee.
+     *
+     * @return the ID number of this employee.
+     */
+    public int getId() {
+        return super.getId();
     }
 }
