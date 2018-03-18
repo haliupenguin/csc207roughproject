@@ -1,6 +1,12 @@
+package Restaurant.Model;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+
+import javafx.beans.property.*;
+
+import javax.jws.WebParam;
 
 /**
  * Represents a table at the restaurant
@@ -10,21 +16,34 @@ import java.util.ArrayList;
 public class Table {
 
     private static ArrayList<Table> tables = new ArrayList<>();
-    private ArrayList<Order> orders = new ArrayList<>();
-    private int number;
+
+    private ArrayList<OrderModel> orders = new ArrayList<>();
+    private IntegerProperty number;
+    private IntegerProperty numCustomers;
 
     /**
      * Creates a new Table object
      *
      * @param number this Table's number
      */
-    public Table(int number) {
-        this.number = number;
+    public Table(int number, int customerNumber) {
+        this.number = new SimpleIntegerProperty(number);
+        this.numCustomers = new SimpleIntegerProperty(customerNumber);
         tables.add(this);
+
     }
 
     public static ArrayList<Table> getTables() {
         return tables;
+    }
+
+    public static Table getTable(int number) {
+        for (Table table : tables) {
+            if (table.getNumber() == number) {
+                return table;
+            }
+        }
+        return null;
     }
 
     /**
@@ -32,7 +51,7 @@ public class Table {
      * *
      * @param order the Order to be added
      */
-    public void addOrder(Order order) {
+    public void addOrder(OrderModel order) {
         orders.add(order);
     }
 
@@ -45,21 +64,12 @@ public class Table {
      */
     public double getTotalPrice() {
         double total = 0;
-        for (Order order : orders) {
-            if (order.isDelivered()) {
+        for (OrderModel order : orders) {
+            if (order.getStatus().equals("Delivered")) {
                 total += order.getPrice();
             }
         }
         return total;
-    }
-
-    /**
-     * Returns this Table's number
-     *
-     * @return this Table's number
-     */
-    public int getNumber() {
-        return number;
     }
 
     /**
@@ -74,8 +84,8 @@ public class Table {
         StringBuilder result = new StringBuilder("Table Number " + number);
         result.append("\n");
         NumberFormat formatter = new DecimalFormat("#0.00");
-        for (Order order : orders) {
-            if (order.isDelivered()) {
+        for (OrderModel order : orders) {
+            if (order.getStatus().equals("Delivered")) {
                 result.append(order.getName());
                 result.append(":");
                 result.append("\n");
@@ -89,5 +99,40 @@ public class Table {
         return result.toString();
     }
 
+    public static void setTables(ArrayList<Table> tables) {
+        Table.tables = tables;
+    }
+
+    public ArrayList<OrderModel> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(ArrayList<OrderModel> orders) {
+        this.orders = orders;
+    }
+
+    public IntegerProperty numberProperty() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number.set(number);
+    }
+
+    public IntegerProperty numCustomersProperty() {
+        return numCustomers;
+    }
+
+    public int getNumber() {
+        return number.get();
+    }
+
+    public int getNumCustomers() {
+        return numCustomers.get();
+    }
+
+    public void setNumCustomers(int numCustomers) {
+        this.numCustomers.set(numCustomers);
+    }
 
 }

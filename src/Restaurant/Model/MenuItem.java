@@ -1,6 +1,10 @@
+package Restaurant.Model;
+
 import java.util.HashMap;
 import java.text.NumberFormat;
 import java.text.DecimalFormat;
+
+import javafx.beans.property.*;
 
 /**
  * Represents a food item on the Menu of the restaurant
@@ -9,9 +13,33 @@ import java.text.DecimalFormat;
  */
 public class MenuItem {
 
-    private HashMap<String, Integer> ingredientsNeeded;
-    private String name;
-    private Double price;
+    private final ObjectProperty<HashMap<String, Integer>> ingredientsNeeded;
+    private final StringProperty name;
+    private final DoubleProperty price;
+
+    public ObjectProperty<HashMap<String, Integer>> ingredientsNeededProperty() {
+        return ingredientsNeeded;
+    }
+
+    public void setIngredientsNeeded(HashMap<String, Integer> ingredientsNeeded) {
+        this.ingredientsNeeded.set(ingredientsNeeded);
+    }
+
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
+    }
+
+    public DoubleProperty priceProperty() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price.set(price);
+    }
 
     /**
      * Creates a MenuItem object
@@ -21,9 +49,9 @@ public class MenuItem {
      * @param price             the price of this MenuItem
      */
     public MenuItem(HashMap<String, Integer>ingredientsNeeded, String name, double price){
-        this.ingredientsNeeded = ingredientsNeeded;
-        this.name = name;
-        this.price = price;
+        this.ingredientsNeeded = new SimpleObjectProperty<>(ingredientsNeeded);
+        this.name = new SimpleStringProperty(name);
+        this.price = new SimpleDoubleProperty(price);
     }
 
     /**
@@ -31,27 +59,6 @@ public class MenuItem {
      *
      * @return the ingredients and quantities needed to make this Order
      */
-    public HashMap<String, Integer> getIngredientsNeeded() {
-        return ingredientsNeeded;
-    }
-
-    /**
-     * Returns the name of this MenuItem
-     *
-     * @return the name of this MenuItem
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Returns the price of this MenuItem
-     *
-     * @return the price of this MenuItem
-     */
-    public Double getPrice() {
-        return price;
-    }
 
     /**
      * Returns a String representation of this MenuItem
@@ -62,6 +69,18 @@ public class MenuItem {
     public String toString() {
         NumberFormat formatter = new DecimalFormat("#0.00");
         return name + "\n" + formatter.format(price);
+    }
+
+    public HashMap<String, Integer> getIngredientsNeeded() {
+        return ingredientsNeeded.get();
+    }
+
+    public String getName() {
+        return name.get();
+    }
+
+    public double getPrice() {
+        return price.get();
     }
 
     /**

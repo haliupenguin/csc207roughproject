@@ -1,5 +1,8 @@
+package Restaurant.Model;
+
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * Represents the restaurant's inventory.
@@ -11,6 +14,10 @@ public class Inventory {
     private static HashMap<String, Integer> inventory = new HashMap<>();
     private static HashMap<String, Integer> minimums = new HashMap<>();
     private static HashMap<String, Integer> defaultOrderAmounts = new HashMap<>();
+
+    public static Set<String> getIngredients() {
+        return inventory.keySet();
+    }
 
     /**
      * Returns the inventory with each ingredient and its current quantity

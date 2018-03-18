@@ -1,3 +1,5 @@
+package Restaurant.Model;
+
 import java.util.ArrayList;
 
 /**

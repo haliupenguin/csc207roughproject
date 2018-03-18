@@ -1,4 +1,4 @@
-import java.util.HashMap;
+package Restaurant.Model;
 
 /**
  * Represents a receiver at the restaurant
