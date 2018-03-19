@@ -34,13 +34,15 @@ public class ServerController {
     private Button deliverOrder;
     @FXML
     private Button rejectedOrder;
+    @FXML
+    private Button sendOrder;
 
     @FXML
-    private ChoiceBox<MenuItem> menuChoices;
+    private ComboBox<MenuItem> menuChoices;
     @FXML
-    private ChoiceBox<Table> tableChoices;
+    private ComboBox<Table> tableChoices;
     @FXML
-    private ChoiceBox<Integer> customerChoices;
+    private ComboBox<Integer> customerChoices;
 
     @FXML
     private TextArea modificationsText;
@@ -69,8 +71,8 @@ public class ServerController {
         tableTables.setItems(cookFXML.getTableData());
         ingredientTable.setItems(cookFXML.getIngredientData());
 
-        menuChoices.setItems(Menu.getItems());
         tableChoices.setItems(Table.getTables());
+        menuChoices.setItems(Menu.getItems());
     }
 
     @FXML
@@ -174,6 +176,42 @@ public class ServerController {
             }
             showModificationDetails();
         } catch (NullPointerException e){
+        }
+    }
+
+    private boolean checkPreviousOrders(TableView tableView) {
+        ObservableList<OrderModel> list = tableView.getItems();
+        for (OrderModel order : list) {
+            if (order.getStatus().equals("Cooked")) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void handleSendOrder() {
+        try {
+            MenuItem menuItem = menuChoices.getSelectionModel().getSelectedItem();
+            Table table = tableChoices.getSelectionModel().getSelectedItem();
+            int customerNumber = customerChoices.getSelectionModel().getSelectedItem();
+            if (checkPreviousOrders(orderTable)) {
+                OrderModel newOrder = new OrderModel(menuItem, modifications,
+                        table.getNumber(), customerNumber);
+                orderTable.getItems().add(newOrder);
+                modifications.clear();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setContentText("Please deliver cooked food before making more orders");
+
+                alert.showAndWait();
+            }
+        } catch (NullPointerException e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setContentText("Please fill in all the fields before making an order");
+
+            alert.showAndWait();
         }
     }
 }

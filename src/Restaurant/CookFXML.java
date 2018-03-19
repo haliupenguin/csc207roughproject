@@ -134,6 +134,11 @@ public class CookFXML extends Application {
             e.printStackTrace();
         }
     }
+
+    public void openTableDialog() {
+
+    }
+
     public Stage getPrimaryStage() {
         return primaryStage;
     }
