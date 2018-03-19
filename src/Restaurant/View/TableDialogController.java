@@ -1,5 +1,6 @@
 package Restaurant.View;
 
+import Restaurant.CookFXML;
 import Restaurant.Model.Table;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -16,11 +17,26 @@ public class TableDialogController {
     private Stage dialogStage;
     private Table table;
 
+    private CookFXML cookFXML;
+
     public void initialize() {
+        showOrderDetails(table);
+    }
+
+    private void showOrderDetails(Table table) {
+        if (table == null) {
+            orderText.setText("");
+        } else {
+
+        }
     }
 
     public void setTableDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
+    }
+
+    public void setMainApp(CookFXML cookFXML) {
+        this.cookFXML = cookFXML;
     }
 
     public void setTable(Table table) {
