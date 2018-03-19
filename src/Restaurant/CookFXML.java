@@ -47,8 +47,10 @@ public class CookFXML extends Application {
 
         Table table1 = new Table(1, 2);
         Table table2 = new Table(2, 1);
+        Table table3 = new Table(3, 0);
         tableData.add(table1);
         tableData.add(table2);
+        tableData.add(table3);
 
         Inventory.addIngredient("Bun", 40, 20, 20);
         Inventory.addIngredient("Lettuce", 40, 20, 20);
