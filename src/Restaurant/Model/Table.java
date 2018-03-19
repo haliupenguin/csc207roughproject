@@ -5,6 +5,8 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 
 import javafx.beans.property.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import javax.jws.WebParam;
 
@@ -15,7 +17,7 @@ import javax.jws.WebParam;
  */
 public class Table {
 
-    private static ArrayList<Table> tables = new ArrayList<>();
+    private static ObservableList<Table> tables = FXCollections.observableArrayList();
 
     private ArrayList<OrderModel> orders = new ArrayList<>();
     private IntegerProperty number;
@@ -33,7 +35,7 @@ public class Table {
 
     }
 
-    public static ArrayList<Table> getTables() {
+    public static ObservableList<Table> getTables() {
         return tables;
     }
 
@@ -99,8 +101,8 @@ public class Table {
         return result.toString();
     }
 
-    public static void setTables(ArrayList<Table> tables) {
-        Table.tables = tables;
+    public String toString() {
+        return "Table " + Integer.toString(number.get());
     }
 
     public ArrayList<OrderModel> getOrders() {

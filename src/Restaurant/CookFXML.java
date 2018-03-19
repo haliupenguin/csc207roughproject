@@ -1,9 +1,6 @@
 package Restaurant;
 
-import Restaurant.Model.Inventory;
-import Restaurant.Model.MenuItem;
-import Restaurant.Model.OrderModel;
-import Restaurant.Model.Table;
+import Restaurant.Model.*;
 import Restaurant.View.OrderOverviewController;
 import Restaurant.View.RootLayoutController;
 import Restaurant.View.ServerController;
@@ -44,6 +41,9 @@ public class CookFXML extends Application {
         mod.put("Lettuce", 1);
         orderData.add(new OrderModel(salad, new HashMap<>(), 1, 2));
         orderData.add(new OrderModel(burger, mod, 2, 1));
+
+        Menu.addItem(burger);
+        Menu.addItem(salad);
 
         Table table1 = new Table(1, 2);
         Table table2 = new Table(2, 1);

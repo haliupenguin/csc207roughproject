@@ -2,9 +2,12 @@ package Restaurant.View;
 
 import Restaurant.CookFXML;
 import Restaurant.Model.OrderModel;
-
+import Restaurant.Model.Menu;
+import Restaurant.Model.MenuItem;
 import Restaurant.Model.Table;
+
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.collections.ObservableList;
@@ -33,6 +36,13 @@ public class ServerController {
     private Button rejectedOrder;
 
     @FXML
+    private ChoiceBox<MenuItem> menuChoices;
+    @FXML
+    private ChoiceBox<Table> tableChoices;
+    @FXML
+    private ChoiceBox<Integer> customerChoices;
+
+    @FXML
     private TextArea modificationsText;
 
     @FXML
@@ -58,6 +68,9 @@ public class ServerController {
         orderTable.setItems(cookFXML.getOrderData());
         tableTables.setItems(cookFXML.getTableData());
         ingredientTable.setItems(cookFXML.getIngredientData());
+
+        menuChoices.setItems(Menu.getItems());
+        tableChoices.setItems(Table.getTables());
     }
 
     @FXML
@@ -73,6 +86,18 @@ public class ServerController {
         tableNumberColumn.setCellValueFactory(cellData -> cellData.getValue().numberProperty().asObject());
 
         ingredientColumn.setCellValueFactory(cellData -> cellData.getValue());
+
+        tableChoices.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> setTableChoice(newValue));
+    }
+
+    public void setTableChoice(Table table) {
+        int customerNumber = table.getNumCustomers();
+        ObservableList<Integer> customerIndexList = FXCollections.observableArrayList();
+        for (int i = 1; i <= customerNumber; i++) {
+            customerIndexList.add(i);
+        }
+        customerChoices.setItems(customerIndexList);
     }
 
     private void showOrderDetails(OrderModel order) {

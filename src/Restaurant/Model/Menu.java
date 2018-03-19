@@ -1,5 +1,8 @@
 package Restaurant.Model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 
 /**
@@ -9,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Menu {
 
-    private static ArrayList<MenuItem> items = new ArrayList<>();
+    private static ObservableList<MenuItem> items = FXCollections.observableArrayList();
 
     /**
      * Adds an MenuItem to the Menu
@@ -25,7 +28,7 @@ public class Menu {
      *
      * @return the MenuItems on the Menu
      */
-    public static ArrayList<MenuItem> getItems() {
+    public static ObservableList<MenuItem> getItems() {
         return items;
     }
 

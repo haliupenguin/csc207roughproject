@@ -67,8 +67,9 @@ public class MenuItem {
      */
     @Override
     public String toString() {
-        NumberFormat formatter = new DecimalFormat("#0.00");
-        return name + "\n" + formatter.format(price);
+//        NumberFormat formatter = new DecimalFormat("#0.00");
+//        return name.get() + " " + formatter.format(price.get());
+        return name.get();
     }
 
     public HashMap<String, Integer> getIngredientsNeeded() {

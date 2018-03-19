@@ -82,13 +82,13 @@
                                           <FlowPane layoutX="14.0" layoutY="25.0" prefHeight="71.0" prefWidth="409.0">
                                              <children>
                                                 <Label prefHeight="26.0" prefWidth="55.0" text="Table #" />
-                                                <ChoiceBox prefHeight="25.0" prefWidth="125.0" />
+                                                <ChoiceBox fx:id="tableChoices" prefHeight="25.0" prefWidth="125.0" />
                                                 <Label text="Customer #">
                                                    <FlowPane.margin>
                                                       <Insets left="10.0" />
                                                    </FlowPane.margin>
                                                 </Label>
-                                                <ChoiceBox prefHeight="25.0" prefWidth="142.0">
+                                                <ChoiceBox fx:id="customerChoices" prefHeight="25.0" prefWidth="142.0">
                                                    <FlowPane.margin>
                                                       <Insets left="10.0" />
                                                    </FlowPane.margin>
@@ -98,7 +98,7 @@
                                                       <Insets top="10.0" />
                                                    </FlowPane.margin>
                                                 </Label>
-                                                <ChoiceBox prefHeight="25.0" prefWidth="341.0">
+                                                <ChoiceBox fx:id="menuChoices" prefHeight="25.0" prefWidth="341.0">
                                                    <FlowPane.margin>
                                                       <Insets left="5.0" top="10.0" />
                                                    </FlowPane.margin>
