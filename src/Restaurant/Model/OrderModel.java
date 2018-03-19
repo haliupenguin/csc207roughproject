@@ -37,17 +37,18 @@ public class OrderModel {
 
         for (String ingredient : modifications.keySet()) {
             if (currentIngredients.contains(ingredient)) {
-                tempIngredientsNeeded.replace(ingredient, modifications.get(ingredient));
-            } else {
+                int new_value = tempIngredientsNeeded.get(ingredient) + modifications.get(ingredient);
+                if (new_value < 0) {
+                    new_value = 0;
+                }
+                tempIngredientsNeeded.replace(ingredient, new_value);
+            } else if (modifications.get(ingredient) > 0) {
                 tempIngredientsNeeded.put(ingredient, modifications.get(ingredient));
             }
         }
         ingredientsNeeded.set(tempIngredientsNeeded);
     }
 
-    public void changeStatus(String newStatus) {
-        status.set(newStatus);
-    }
 
     public String toString() {
         NumberFormat formatter = new DecimalFormat("#0.00");

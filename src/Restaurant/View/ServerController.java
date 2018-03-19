@@ -33,6 +33,9 @@ public class ServerController {
     private Button rejectedOrder;
 
     @FXML
+    private TextArea modificationsText;
+
+    @FXML
     private TableView<Table> tableTables;
     @FXML
     private TableColumn<Table, Integer> tableNumberColumn;
@@ -72,7 +75,7 @@ public class ServerController {
         ingredientColumn.setCellValueFactory(cellData -> cellData.getValue());
     }
 
-    public void showOrderDetails(OrderModel order) {
+    private void showOrderDetails(OrderModel order) {
         if (order != null) {
             tableNumberLabel.setText(Integer.toString(order.getTableNumber()));
             customerNumberLabel.setText(Integer.toString(order.getCustomerNum()));
@@ -82,6 +85,25 @@ public class ServerController {
             customerNumberLabel.setText("");
             menuItemLabel.setText("");
         }
+    }
+
+    private void showModificationDetails() {
+        StringBuilder builder = new StringBuilder();
+        for (String ingredient : modifications.keySet()) {
+            int value = modifications.get(ingredient);
+            if (value == 0) {
+                modifications.remove(ingredient, 0);
+            } else {
+                if (value > 0) {
+                    builder.append('+');
+                }
+                builder.append(value);
+                builder.append(' ');
+                builder.append(ingredient);
+                builder.append('\n');
+            }
+        }
+        modificationsText.setText(builder.toString());
     }
 
     public void handleDeliver() {
@@ -101,6 +123,32 @@ public class ServerController {
                 order.setStatus("Not Acknowledged");
             }
         } catch (NullPointerException e) {
+        }
+    }
+
+    public void handleAddIngredient() {
+        try {
+            String ingredient = ingredientTable.getSelectionModel().getSelectedItem().get();
+            if (modifications.keySet().contains(ingredient)) {
+                modifications.replace(ingredient, modifications.get(ingredient) + 1);
+            } else {
+                modifications.put(ingredient, 1);
+            }
+            showModificationDetails();
+        } catch (NullPointerException e) {
+        }
+    }
+
+    public void handleSubtractIngredient() {
+        try {
+            String ingredient = ingredientTable.getSelectionModel().getSelectedItem().get();
+            if (modifications.keySet().contains(ingredient)) {
+                modifications.replace(ingredient, modifications.get(ingredient) - 1);
+            } else {
+                modifications.put(ingredient, -1);
+            }
+            showModificationDetails();
+        } catch (NullPointerException e){
         }
     }
 }

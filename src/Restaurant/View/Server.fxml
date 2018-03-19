@@ -110,9 +110,9 @@
                                               <TableColumn fx:id="ingredientColumn" prefWidth="106.0" text="Ingredient" />
                                             </columns>
                                           </TableView>
-                                          <Button layoutX="131.0" layoutY="122.0" mnemonicParsing="false" text="+" />
-                                          <Button layoutX="131.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" />
-                                          <TextArea layoutX="169.0" layoutY="135.0" prefHeight="132.0" prefWidth="244.0" />
+                                          <Button layoutX="131.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleAddIngredient" text="+" />
+                                          <Button layoutX="131.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleSubtractIngredient" prefHeight="25.0" prefWidth="25.0" text="-" />
+                                          <TextArea fx:id="modificationsText" layoutX="169.0" layoutY="135.0" prefHeight="132.0" prefWidth="244.0" />
                                           <Button layoutX="288.0" layoutY="295.0" mnemonicParsing="false" prefWidth="125.0" text="Send Order" />
                                           <Label layoutX="169.0" layoutY="105.0" text="Modifications" />
                                        </children></AnchorPane>

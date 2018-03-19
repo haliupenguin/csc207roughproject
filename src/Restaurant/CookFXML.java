@@ -41,7 +41,7 @@ public class CookFXML extends Application {
         MenuItem salad = new MenuItem(saladIngredients, "Salad", 3.50);
         orderData.add(new OrderModel(burger, new HashMap<>(), 1, 1));
         HashMap<String, Integer> mod = new HashMap<>();
-        mod.put("Lettuce", 2);
+        mod.put("Lettuce", 1);
         orderData.add(new OrderModel(salad, new HashMap<>(), 1, 2));
         orderData.add(new OrderModel(burger, mod, 2, 1));
 
