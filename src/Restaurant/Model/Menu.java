@@ -3,8 +3,6 @@ package Restaurant.Model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.util.ArrayList;
-
 /**
  * Represents the Menu of the restaurant
  *

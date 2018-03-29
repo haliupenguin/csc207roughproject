@@ -1,0 +1,20 @@
+Table #1
+================================
+Customer #1
+Order #1: Burger 4.00
+
+Subtotal: 4.00
+Total: 4.52
+================================
+Customer #2
+Order #2: Cold Lettuce 1.00
+
+Subtotal: 1.00
+Total: 1.13
+================================
+Customer #3
+Order #3: Belgian Fries 2.00
+
+Subtotal: 2.00
+Total: 2.26
+================================

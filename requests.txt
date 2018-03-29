@@ -1,0 +1,30 @@
+Shipment requested: 
+{Lettuce=20, Bun=20, Tomato=300, Meat=20}
+Shipment requested: 
+{Lettuce=20, Bun=20, Tomato=300}
+Shipment requested: 
+{Potato=20}
+Shipment requested: 
+{Potato=20}
+Shipment requested: 
+{Potato=20}
+Shipment requested: 
+{Potato=20}
+Shipment requested: 
+{Potato=20}
+Shipment requested: 
+{Potato=20}
+Shipment requested: 
+{Potato=20}
+Shipment requested: 
+{Potato=20}
+Shipment requested: 
+{Potato=20}
+Shipment requested: 
+{Meat=20}
+Shipment requested: 
+{Bun=50}
+Shipment requested: 
+{Bun=50}
+Shipment requested: 
+{Bun=50}

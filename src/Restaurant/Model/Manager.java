@@ -1,7 +1,5 @@
 package Restaurant.Model;
 
-import java.io.*;
-
 /**
  * Represents a manager at the restaurant.
  *
@@ -10,20 +8,23 @@ import java.io.*;
  */
 public class Manager extends Employee {
 
+    private Inventory inventory;
+
     /**
-     * Creates a new Manager with an ID.
+     * Creates a new Restaurant.Model.Manager with an ID.
      *
-     * @param id the ID of this Manager
+     * @param id the ID of this Restaurant.Model.Manager
      */
-    public Manager(int id) {
+    public Manager(int id, Inventory inventory) {
         super(id);
+        this.inventory = inventory;
     }
 
     /**
      * Overrides the default order amount of an ingredient when the ingredient drops
      * below the minimum.
      *
-     * Whenever the Inventory alerts a Manager that an ingredient is running low, this new
+     * Whenever the Inventory alerts a Restaurant.Model.Manager that an ingredient is running low, this new
      * order amount will be ordered.
      *
      * @param ingredient the ingredient whose default order amount will be changed
@@ -31,40 +32,71 @@ public class Manager extends Employee {
      */
     public void overrideDefaultOrderAmount(String ingredient, int number) {
         if (number > 0) {
-            Inventory.changeDefault(ingredient, number);
+            inventory.changeDefault(ingredient, number);
         }
     }
 
     /**
-     * Orders a shipment of an ingredient.
+     * Overrides the minimum amount of an ingredient.
      *
-     * This method is called whenever an ingredient is running low in the Inventory. The Manager
-     * will order a default amount unless it has been overridden.
+     * The minimum amount is the amount that is kept before it must be restocked.
      *
-     * @param ingredient the ingredient to be ordered
-     * @param amount the amount to be ordered
-     * @throws IOException if requests.txt cannot be written to
+     * @param ingredient the ingredient whose minimum will be changed
+     * @param number     the new minimum
      */
-    public static void orderIngredients(String ingredient, int amount) throws IOException {
-
-        try(FileWriter fileWriter = new FileWriter("requests.txt", true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            PrintWriter out = new PrintWriter(bufferedWriter)) {
-            out.println("Request for " + amount + " units of " + ingredient);
+    public void overrideMinimumAmount(String ingredient, int number) {
+        if (number > 0) {
+            inventory.changeMinimum(ingredient, number);
         }
-
-    }
-
-    public static String checkInventory() {
-        return Inventory.getStringRepresentation();
     }
 
     /**
-     * Returns the ID number of this Employee.
+     * Returns the amount of an ingredient present in the Inventory
+     *
+     * @param ingredient the ingredient to be checked
+     * @return           the amount of the ingredient in the Inventory
+     */
+    public int getIngredientAmount(String ingredient) {
+        return inventory.getInventory().get(ingredient);
+    }
+
+    /**
+     * Returns the minimum amount of an ingredient
+     *
+     * @param ingredient the ingredient to be checked
+     * @return           the minimum amount of the ingredient
+     */
+    public int getMinimumAmount(String ingredient) {
+        return inventory.getMinimums().get(ingredient);
+    }
+
+    /**
+     * Returns the default order amount of an ingredient
+     *
+     * @param ingredient the ingredient to be checked
+     * @return           the default order amount
+     */
+    public int getDefaultOrderAmount(String ingredient) {
+        return inventory.getDefaultOrderAmounts().get(ingredient);
+    }
+
+
+    /**
+     * Returns the ID number of this Restaurant.Model.Employee.
      *
      * @return the ID number of this employee.
      */
     public int getId() {
         return super.getId();
     }
+
+    /**
+     * Returns the Inventory
+     *
+     * @return the Manager's Inventory
+     */
+    public Inventory getInventory() {
+        return inventory;
+    }
+
 }

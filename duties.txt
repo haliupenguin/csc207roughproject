@@ -1,0 +1,19 @@
+Group_0477
+
+This is a two person team. One person can't this carry assignment
+=> We both did stuff.
+
+But if you aren't satisfied, here you go:
+Dennis
+Logger
+Factories
+Employee Database
+Server, Cook, (Receiver + fxml + controller), (Manager + add/'fire' employee)
+Destaticizing Inventory
+Destaticizing everything else
+ConfigReadWriter
+
+Jeffrey
+FXMLs
+Controllers
+MainApplication

@@ -1,0 +1,1076 @@
+Mar 27, 2018 4:24:29 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 27, 2018 4:24:33 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 27, 2018 4:24:37 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 1 people
+Mar 27, 2018 4:24:45 PM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Lettuce=20, Bun=20, Tomato=300}
+Mar 27, 2018 4:24:45 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Burger 4.00
+To the kitchen.
+Mar 27, 2018 4:24:53 PM Restaurant.Controller.LoginController handleSignOut
+INFO: Employee 1 signed out
+Mar 27, 2018 4:24:56 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 4 signed in
+Mar 27, 2018 4:25:33 PM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #1 has been received
+Mar 27, 2018 4:25:40 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 4 signed out
+Mar 27, 2018 4:25:40 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 27, 2018 4:32:48 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 27, 2018 4:32:52 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 27, 2018 4:33:45 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 27, 2018 4:33:49 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 4 signed in
+Mar 27, 2018 4:33:53 PM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #1 has been received
+Mar 27, 2018 4:34:00 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 4 signed out
+Mar 27, 2018 4:34:00 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 27, 2018 4:36:56 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 27, 2018 4:37:01 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 3 signed in
+Mar 27, 2018 4:37:16 PM Restaurant.Controller.ManagerController handleMakeChanges
+INFO: 
+Mar 27, 2018 4:37:28 PM Restaurant.Controller.ManagerController handleMakeChanges
+INFO: 
+Mar 27, 2018 4:37:32 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 3 signed out
+Mar 27, 2018 4:37:32 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 27, 2018 6:42:11 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 27, 2018 6:42:21 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 27, 2018 6:42:24 PM Restaurant.Controller.ServerController handleDeliver
+SEVERE: Unexpected error. Please contact system administrator.
+Mar 27, 2018 6:42:28 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 1 signed out
+Mar 27, 2018 6:42:28 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 27, 2018 7:43:47 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 27, 2018 7:43:52 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 3 signed in
+Mar 27, 2018 7:44:10 PM Restaurant.Controller.ManagerController addNewEmployee
+INFO: Added new employee Server 5
+Mar 27, 2018 7:44:14 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 3 signed out
+Mar 27, 2018 7:44:14 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 27, 2018 7:44:21 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 27, 2018 7:44:26 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 3 signed in
+Mar 27, 2018 7:44:42 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 3 signed out
+Mar 27, 2018 7:44:42 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 27, 2018 7:47:16 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 27, 2018 7:47:21 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 27, 2018 7:47:23 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 1 signed out
+Mar 27, 2018 7:47:23 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 27, 2018 7:52:04 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 27, 2018 7:52:15 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 27, 2018 7:52:37 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 2 people
+Mar 27, 2018 7:52:43 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Burger 4.00
+To the kitchen.
+Mar 27, 2018 7:52:47 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 1 signed out
+Mar 27, 2018 7:52:47 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 27, 2018 7:53:40 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 27, 2018 7:53:45 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 27, 2018 7:53:51 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 2 is now occupied by 3 people
+Mar 27, 2018 7:53:56 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #2
+Burger 4.00
+To the kitchen.
+Mar 27, 2018 7:54:00 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 27, 2018 7:54:04 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 27, 2018 7:54:06 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 27, 2018 7:54:18 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 27, 2018 7:54:20 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 27, 2018 7:54:26 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 27, 2018 7:54:29 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 2 signed out
+Mar 27, 2018 7:54:45 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 2 signed out
+Mar 27, 2018 7:54:45 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 28, 2018 11:37:43 AM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 11:37:52 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 11:37:54 AM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 11:37:58 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 11:38:00 AM Restaurant.Controller.RootLayoutController handleExit
+INFO: Employee 1 signed out
+Mar 28, 2018 11:38:00 AM Restaurant.Controller.RootLayoutController handleExit
+INFO: Application exited
+Mar 28, 2018 11:38:07 AM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 11:38:12 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 11:38:16 AM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 2 people
+Mar 28, 2018 11:38:24 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 11:38:30 AM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 2 is now occupied by 1 people
+Mar 28, 2018 11:38:36 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #2
+Table #1
+Belgian Fries 2.00
+To the kitchen.
+Mar 28, 2018 11:38:44 AM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 11:38:48 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 11:38:57 AM Restaurant.Controller.CookController handleAcknowledge
+INFO: Acknowledged:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 11:40:08 AM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 11:40:14 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 11:40:20 AM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 2 people
+Mar 28, 2018 11:40:27 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 11:40:33 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #2
+Table #1
+Belgian Fries 2.00
+To the kitchen.
+Mar 28, 2018 11:40:36 AM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 2 is now occupied by 1 people
+Mar 28, 2018 11:40:38 AM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 11:40:41 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 11:40:45 AM Restaurant.Controller.CookController handleAcknowledge
+INFO: Acknowledged:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 11:40:46 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 11:40:47 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 11:40:53 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #2
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 11:40:55 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #2
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 11:40:58 AM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 2 signed out
+Mar 28, 2018 11:41:01 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 11:41:24 AM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #2
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 11:41:26 AM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 11:41:29 AM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Potato=20}
+Mar 28, 2018 11:41:29 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #3
+Table #2
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 11:41:34 AM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 3 is now occupied by 8 people
+Mar 28, 2018 11:41:41 AM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Potato=20}
+Mar 28, 2018 11:41:41 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #4
+Table #3
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 11:41:43 AM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Potato=20}
+Mar 28, 2018 11:41:43 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #5
+Table #3
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 11:41:46 AM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Potato=20}
+Mar 28, 2018 11:41:46 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #6
+Table #3
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 11:41:47 AM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Potato=20}
+Mar 28, 2018 11:41:47 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #7
+Table #3
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 11:41:49 AM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Potato=20}
+Mar 28, 2018 11:41:49 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #8
+Table #3
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 11:41:51 AM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Potato=20}
+Mar 28, 2018 11:41:51 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #9
+Table #3
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 11:41:53 AM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Potato=20}
+Mar 28, 2018 11:41:53 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #10
+Table #3
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 11:41:57 AM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Potato=20}
+Mar 28, 2018 11:41:57 AM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #11
+Table #3
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 11:42:09 AM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 11:42:15 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 4 signed in
+Mar 28, 2018 11:42:22 AM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #1 has been received
+Mar 28, 2018 11:42:25 AM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #2 has been received
+Mar 28, 2018 11:42:27 AM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #3 has been received
+Mar 28, 2018 11:42:28 AM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #4 has been received
+Mar 28, 2018 11:42:30 AM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #5 has been received
+Mar 28, 2018 11:42:33 AM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #6 has been received
+Mar 28, 2018 11:42:36 AM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #7 has been received
+Mar 28, 2018 11:42:38 AM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #8 has been received
+Mar 28, 2018 11:42:39 AM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #9 has been received
+Mar 28, 2018 11:42:41 AM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 4 signed out
+Mar 28, 2018 11:42:48 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 11:42:54 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #3
+Table #2
+Burger 4.00
+Mar 28, 2018 11:42:56 AM Restaurant.Controller.CookController handleAcknowledge
+INFO: Acknowledged:
+Order #4
+Table #3
+Burger 4.00
+Mar 28, 2018 11:42:58 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #5
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:01 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #4
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:03 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #6
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:04 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #7
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:06 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #8
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:08 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #9
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:10 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #10
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:12 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #11
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:14 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #3
+Table #2
+Burger 4.00
+Mar 28, 2018 11:43:16 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #4
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:17 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #5
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:19 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #6
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:21 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #7
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:22 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #8
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:24 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #9
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:27 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #10
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:28 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #11
+Table #3
+Burger 4.00
+Mar 28, 2018 11:43:30 AM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 2 signed out
+Mar 28, 2018 11:43:36 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 3 signed in
+Mar 28, 2018 11:44:01 AM Restaurant.Controller.ManagerController handleMakeChanges
+INFO: 
+Mar 28, 2018 11:44:36 AM Restaurant.Controller.ManagerController addNewEmployee
+INFO: Added new employee Server 6
+Mar 28, 2018 11:44:41 AM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 3 signed out
+Mar 28, 2018 11:44:45 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 11:44:48 AM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #3
+Table #2
+Burger 4.00
+Mar 28, 2018 11:45:26 AM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #4
+Table #3
+Burger 4.00
+Mar 28, 2018 11:45:28 AM Restaurant.Controller.ServerController handleRejectedOrder
+INFO: Order #5
+Table #3
+Burger 4.00
+Rejected and set back to kitchen
+Mar 28, 2018 11:45:30 AM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #6
+Table #3
+Burger 4.00
+Mar 28, 2018 11:45:32 AM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #7
+Table #3
+Burger 4.00
+Mar 28, 2018 11:45:33 AM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #8
+Table #3
+Burger 4.00
+Mar 28, 2018 11:45:35 AM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #9
+Table #3
+Burger 4.00
+Mar 28, 2018 11:45:37 AM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #10
+Table #3
+Burger 4.00
+Mar 28, 2018 11:45:38 AM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #11
+Table #3
+Burger 4.00
+Mar 28, 2018 11:46:24 AM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 11:46:28 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 11:46:30 AM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #5
+Table #3
+Burger 4.00
+Mar 28, 2018 11:46:31 AM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #5
+Table #3
+Burger 4.00
+Mar 28, 2018 11:46:33 AM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 2 signed out
+Mar 28, 2018 11:46:36 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 11:46:39 AM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #5
+Table #3
+Burger 4.00
+Mar 28, 2018 11:46:47 AM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 11:46:50 AM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 4 signed in
+Mar 28, 2018 11:46:59 AM Restaurant.MainApplication lambda$start$0
+INFO: Employee 4 signed out
+Mar 28, 2018 11:46:59 AM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 28, 2018 4:45:24 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 4:45:37 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 28, 2018 5:02:39 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 5:02:44 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 5:02:49 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 1 people
+Mar 28, 2018 5:02:53 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 5:02:55 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 5:02:58 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 5:03:02 PM Restaurant.Controller.CookController handleAcknowledge
+INFO: Acknowledged:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 5:03:09 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 2 signed out
+Mar 28, 2018 5:03:09 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 28, 2018 5:03:32 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 5:03:37 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 5:03:41 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 1 people
+Mar 28, 2018 5:03:44 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 5:03:46 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 5:03:48 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 5:03:55 PM Restaurant.Controller.CookController handleAcknowledge
+INFO: Acknowledged:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 5:04:00 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 5:04:04 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 2 signed out
+Mar 28, 2018 5:04:04 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 28, 2018 5:05:06 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 5:05:09 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 5:05:15 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 2 is now occupied by 3 people
+Mar 28, 2018 5:05:20 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #2
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 5:05:21 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 5:05:24 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 5:05:27 PM Restaurant.Controller.CookController handleAcknowledge
+INFO: Acknowledged:
+Order #1
+Table #2
+Burger 4.00
+Mar 28, 2018 5:05:31 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #1
+Table #2
+Burger 4.00
+Mar 28, 2018 5:05:37 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 2 signed out
+Mar 28, 2018 5:05:37 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 28, 2018 5:08:25 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 5:08:30 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 5:08:42 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 1 people
+Mar 28, 2018 5:08:46 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 5:08:47 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 5:08:50 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 5:08:57 PM Restaurant.Controller.CookController handleAcknowledge
+INFO: Acknowledged:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 5:09:14 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 5:09:17 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 5:09:22 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 1 people
+Mar 28, 2018 5:09:28 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Cold Lettuce 1.00
+To the kitchen.
+Mar 28, 2018 5:09:29 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 5:09:32 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 5:09:35 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #1
+Table #1
+Cold Lettuce 1.00
+Mar 28, 2018 5:09:37 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #1
+Table #1
+Cold Lettuce 1.00
+Mar 28, 2018 5:10:42 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 5:10:46 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 5:10:49 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 2 people
+Mar 28, 2018 5:10:53 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 5:10:55 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 5:10:58 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 5:11:00 PM Restaurant.Controller.CookController handleAcknowledge
+INFO: Acknowledged:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 5:11:01 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 5:11:03 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 5:11:07 PM Restaurant.Controller.CookController handleCancelOrder
+INFO: Cancelled:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 5:11:08 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 2 signed out
+Mar 28, 2018 5:11:08 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 28, 2018 9:41:14 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 9:41:24 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 9:41:50 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 2 people
+Mar 28, 2018 9:41:56 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 9:42:02 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #2
+Table #1
+Belgian Fries 2.00
+To the kitchen.
+Mar 28, 2018 9:42:04 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 9:42:09 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 9:42:15 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 9:42:18 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 2 signed out
+Mar 28, 2018 9:42:21 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 9:42:25 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 2 is now occupied by 1 people
+Mar 28, 2018 9:42:31 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #3
+Table #2
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 9:42:32 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 9:42:35 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 9:42:41 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #2
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 9:42:43 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #3
+Table #2
+Burger 4.00
+Mar 28, 2018 9:42:44 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 9:42:48 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #2
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 9:42:50 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #3
+Table #2
+Burger 4.00
+Mar 28, 2018 9:42:53 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 2 signed out
+Mar 28, 2018 9:42:57 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 4 signed in
+Mar 28, 2018 9:43:07 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 4 signed out
+Mar 28, 2018 9:43:10 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 9:43:16 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 3 is now occupied by 8 people
+Mar 28, 2018 9:43:26 PM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 9:43:28 PM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #2
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 9:43:30 PM Restaurant.Controller.ServerController handleRejectedOrder
+INFO: Order #3
+Table #2
+Burger 4.00
+Rejected and set back to kitchen
+Mar 28, 2018 9:43:31 PM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Meat=20}
+Mar 28, 2018 9:43:31 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #4
+Table #3
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 9:43:34 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 9:43:37 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 4 signed in
+Mar 28, 2018 9:44:06 PM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #1 has been received
+Mar 28, 2018 9:44:12 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 4 signed out
+Mar 28, 2018 9:44:15 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 9:44:17 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #3
+Table #2
+Burger 4.00
+Mar 28, 2018 9:44:18 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #3
+Table #2
+Burger 4.00
+Mar 28, 2018 9:44:19 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #4
+Table #3
+Burger 4.00
+Mar 28, 2018 9:44:20 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #4
+Table #3
+Burger 4.00
+Mar 28, 2018 9:44:22 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 2 signed out
+Mar 28, 2018 9:44:24 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 9:44:31 PM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #3
+Table #2
+Burger 4.00
+Mar 28, 2018 9:44:33 PM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #4
+Table #3
+Burger 4.00
+Mar 28, 2018 9:44:52 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 9:44:55 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 3 signed in
+Mar 28, 2018 9:45:37 PM Restaurant.Controller.ManagerController handleMakeChanges
+INFO: Default Order Amount / Minimum Amount of Potatohas been changed
+Mar 28, 2018 9:45:42 PM Restaurant.Controller.ManagerController handleMakeChanges
+INFO: Default Order Amount / Minimum Amount of Bunhas been changed
+Mar 28, 2018 9:45:56 PM Restaurant.Controller.ManagerController addNewEmployee
+INFO: Added new employee Receiver 69
+Mar 28, 2018 9:46:10 PM Restaurant.Controller.ManagerController removeEmployee
+INFO: Removed employee id 69
+Mar 28, 2018 9:46:18 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 3 signed out
+Mar 28, 2018 9:46:18 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 28, 2018 9:47:22 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 9:47:28 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 9:47:34 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 3 people
+Mar 28, 2018 9:47:47 PM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Bun=50}
+Mar 28, 2018 9:47:47 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 9:47:55 PM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Bun=50}
+Mar 28, 2018 9:47:55 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #2
+Table #1
+Cold Lettuce 1.00
+To the kitchen.
+Mar 28, 2018 9:48:04 PM Restaurant.Model.Inventory checkInventory
+INFO: Shipment requested: 
+{Bun=50}
+Mar 28, 2018 9:48:04 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #3
+Table #1
+Belgian Fries 2.00
+To the kitchen.
+Mar 28, 2018 9:48:06 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 9:48:11 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 4 signed in
+Mar 28, 2018 9:48:19 PM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #1 has been received
+Mar 28, 2018 9:48:21 PM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #2 has been received
+Mar 28, 2018 9:48:23 PM Restaurant.Controller.ReceiverController handleConfirmReceived
+INFO: Delivery #3 has been received
+Mar 28, 2018 9:48:25 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 4 signed out
+Mar 28, 2018 9:48:30 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 9:48:32 PM Restaurant.Controller.CookController handleAcknowledge
+INFO: Acknowledged:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 9:48:33 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 9:48:34 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 9:48:36 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #2
+Table #1
+Cold Lettuce 1.00
+Mar 28, 2018 9:48:36 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #2
+Table #1
+Cold Lettuce 1.00
+Mar 28, 2018 9:48:38 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #3
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 9:48:39 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #3
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 9:48:41 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 2 signed out
+Mar 28, 2018 9:48:43 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 9:48:46 PM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 9:48:47 PM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #2
+Table #1
+Cold Lettuce 1.00
+Mar 28, 2018 9:48:50 PM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #3
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 9:49:36 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 1 signed out
+Mar 28, 2018 9:49:36 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 28, 2018 9:50:45 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 28, 2018 9:50:50 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 9:50:54 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 1 is now occupied by 3 people
+Mar 28, 2018 9:50:58 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #1
+Table #1
+Burger 4.00
+To the kitchen.
+Mar 28, 2018 9:51:01 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #2
+Table #1
+Cold Lettuce 1.00
+To the kitchen.
+Mar 28, 2018 9:51:05 PM Restaurant.Controller.ServerController handleSendOrder
+INFO: Sent:
+Order #3
+Table #1
+Belgian Fries 2.00
+To the kitchen.
+Mar 28, 2018 9:51:06 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 1 signed out
+Mar 28, 2018 9:51:09 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 2 signed in
+Mar 28, 2018 9:51:11 PM Restaurant.Controller.CookController handleAcknowledge
+INFO: Acknowledged:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 9:51:12 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 9:51:13 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 9:51:14 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #2
+Table #1
+Cold Lettuce 1.00
+Mar 28, 2018 9:51:15 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #2
+Table #1
+Cold Lettuce 1.00
+Mar 28, 2018 9:51:18 PM Restaurant.Controller.CookController handleStartCooking
+INFO: Started cooking:
+Order #3
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 9:51:18 PM Restaurant.Controller.CookController handleFinishCooking
+INFO: Finish cooking:
+Order #3
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 9:51:20 PM Restaurant.Controller.RootLayoutController handleSignOut
+INFO: Employee 2 signed out
+Mar 28, 2018 9:51:22 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 28, 2018 9:51:28 PM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #2
+Table #1
+Cold Lettuce 1.00
+Mar 28, 2018 9:51:30 PM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #1
+Table #1
+Burger 4.00
+Mar 28, 2018 9:51:32 PM Restaurant.Controller.ServerController handleDeliver
+INFO: Delivered:
+Order #3
+Table #1
+Belgian Fries 2.00
+Mar 28, 2018 9:54:46 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 1 signed out
+Mar 28, 2018 9:54:46 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 29, 2018 7:36:35 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 29, 2018 7:36:41 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 29, 2018 7:36:50 PM Restaurant.Controller.TableDialogController handleSetTable
+INFO: Table 2 is now occupied by 2 people
+Mar 29, 2018 7:37:02 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 1 signed out
+Mar 29, 2018 7:37:02 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited
+Mar 29, 2018 7:44:42 PM Restaurant.MainApplication main
+INFO: Application started.
+Mar 29, 2018 7:45:34 PM Restaurant.Controller.LoginController handleSignIn
+INFO: Employee 1 signed in
+Mar 29, 2018 7:45:36 PM Restaurant.MainApplication lambda$start$0
+INFO: Employee 1 signed out
+Mar 29, 2018 7:45:36 PM Restaurant.MainApplication lambda$start$0
+INFO: Application Exited

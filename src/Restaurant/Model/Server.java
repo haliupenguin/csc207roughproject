@@ -1,83 +1,65 @@
-//package Restaurant.Model;
-//
-//import java.util.HashMap;
-//
-///**
-// * Represents a Server at the restaurant
-// *
-// * A server takes orders from Tables and delivers cooked food to the Table
-// */
-//public class Server extends Employee {
-//
-//    /**
-//     * Creates a Server object
-//     *
-//     * @param id the Server's ID
-//     */
-//    public Server(int id) {
-//        super(id);
-//    }
-//
-//    /**
-//     * Takes information about an order from a Table and makes it into an Order object that is
-//     * sent to the Cook to be made.
-//     *
-//     * @param menuItem the menuItem object that is ordered by the customer
-//     * @param table the Table object where the customer is seated
-//     * @param modifications all the additions/subtractions that the customer wants to make to the MenuItem
-//     */
-//    public void takeOrder(MenuItem menuItem, Table table, HashMap<String, Integer> modifications) {
-//        Order order = new Order(menuItem, modifications, table.getNumber());
-//        table.addOrder(order);
-//        System.out.println("================================");
-//        System.out.println("New Order:");
-//        System.out.println(order.toString());
-//        System.out.println("================================");
-//        Cook.receiveOrder(order);
-//    }
-//
-//    /**
-//     * Delivers the Order specified by orderId to the Table if it has been cooked
-//     *
-//     * @param orderId the ID of the order to be delivered to the Table
-//     */
-//    public void deliverOrder(int orderId) {
-//        Order order = Cook.removeOrder(orderId);
-//        if (!(order == null)) {
-//            order.deliver();
-//        }
-//    }
-//
-//    /**
-//     * Takes an Order that the customer found unsatisfactory and returns it to the Cooks to
-//     * be redone
-//     *
-//     * @param orderId the ID of the order to be redone
-//     */
-//    public void takeRejectedOrder(int orderId) {
-//        Order order = Cook.removeOrder(orderId);
-//        if (!(order == null)) {
-//            Cook.receiveOrder(order);
-//        }
-//    }
-//
-//    /**
-//     * Outputs the bill of a table.
-//     *
-//     * @param table the table
-//     */
-//    public void getBill(Table table) {
-//        System.out.println("================================");
-//        System.out.println(table.getTotalBill());
-//        System.out.println("================================");
-//    }
-//
-//    /**
-//     * Returns the ID number of this Employee.
-//     *
-//     * @return the ID number of this employee.
-//     */
-//    public int getId() {
-//        return super.getId();
-//    }
-//}
+package Restaurant.Model;
+
+import java.util.HashMap;
+
+/**
+ * Represents a server at a restaurant.
+ *
+ * Servers take orders, deliver orders and sit tables.
+ */
+public class Server extends Employee {
+
+    /**
+     * Create a new Restaurant.Model.Server with an Id
+     *
+     * @param id the Id of the Server
+     */
+    public Server(int id) {
+        super(id);
+    }
+
+    /**
+     * Deliver an Restaurant.Model.Order, and return true. If it does not deliver for whatever reason, return false.
+     *
+     * @param order the Order to be delivered
+     * @return if the Order has been delivered
+     */
+    public boolean deliver(Order order) {
+        if (order.getStatus().equals("Cooked")) {
+            order.setStatus("Delivered");
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Sets an Restaurant.Model.Order that has been cooked or delivered back to not acknowledged and return true.
+     * If it does not set the status back for whatever reason, return false
+     *
+     * @param order the Order to be rejected
+     * @return if the Order has been rejected
+     */
+    public boolean handleRejectedOrder(Order order) {
+        if (order.getStatus().equals("Cooked") || order.getStatus().equals("Delivered")) {
+            order.setStatus("Not Acknowledged");
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Creates a new Restaurant.Model.Order and sends it to the kitchen.
+     *
+     * @param menuItem the MenuItem of the Order
+     * @param table the table that ordered this Order
+     * @param customerNumber the customer that ordered this Order
+     * @param modifications potential modifications to this Order
+     * @return the new Order
+     */
+    public Order takeOrder(MenuItem menuItem, Table table, int customerNumber, HashMap<String, Integer> modifications) {
+        Order newOrder = new Order(menuItem, modifications, table.getNumber(), customerNumber);
+        table.addOrder(newOrder);
+        return newOrder;
+    }
+
+}

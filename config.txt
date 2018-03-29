@@ -1,78 +1,39 @@
 MENU
-Hamburger
-2.25
-Bun 1 | Patty 1 | Lettuce 1 | Tomato 1 | Mayonnaise 1
-Deluxe Burger
-3.00
-Bun 1 | Patty 1 | Lettuce 1 | Tomato 1 | Onion 1 | Mushroom 1 | Cheese 1 | Mayonnaise 1
-Cheeseburger
-2.80
-Bun 1 | Patty 1 | Lettuce 1 | Tomato 1 | Cheese 1 | Mayonnaise 1
-Fries
-1.50
-Potato 4 | Salt 1
-Cheese Fries
-1.90
-Potato 4 | Salt 1 | Cheese 1
-Poutine
-2.50
-Potato 4 | Salt 1 | Cheese 1 | Gravy 1
-Veggie Burger
-2.50
-Bun 1 | Lettuce 1 | Tomato 1 | Mayonnaise 1 | Onion 1 | Mushroom 1
-Grilled Cheese
-1.20
-Bun 1 | Cheese 2
-Chicken Burger
-3.00
-Bun 1 | Chicken 1 | Lettuce 1 | Tomato 1 | Mayonnaise 1 |
-Fried Chicken
-Chicken 3
+Burger
+4.00
+Lettuce 1 | Bun 1 | Tomato 1 | Meat 1
+Salad
+600.00
+Lettuce 500 | Tomato 500
+Cold Lettuce
+1.00
+Lettuce 1
+Belgian Fries
+2.00
+Potato 3
+
+TABLES
+5
+
 INVENTORY
-Bun
-108
-20
-Patty
-148
+Potato
+183
+30
 20
 Lettuce
-165
+24
 20
+20
+Bun
+162
+15
+50
 Tomato
-137
+291
+15
 20
-Onion
-223
+Meat
+30
+15
 20
-Mushroom
-224
-20
-Cheese
-236
-20
-Mayonnaise
-121
-20
-Potato
-258
-20
-Salt
-9999
-20
-Chicken
-209
-20
-Gravy
-83
-20
-TABLES
-20
-EMPLOYEES
-Servers
-4
-Cooks
-2
-Managers
-1
-Receivers
-1
+

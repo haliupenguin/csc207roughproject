@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Restaurant.View.TableDialogController">
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Restaurant.Controller.TableDialogController">
    <children>
       <GridPane prefHeight="124.0" prefWidth="300.0" AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -32,7 +32,7 @@
                   <Insets left="5.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Label">
+            <Label fx:id="tableNumberLabel" text="Label">
                <GridPane.margin>
                   <Insets left="60.0" />
                </GridPane.margin>
@@ -40,7 +40,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label fx:id="occupiedLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Label>
@@ -49,7 +49,7 @@
                   <Insets left="5.0" top="5.0" />
                </GridPane.margin>
             </Label>
-            <TextField prefHeight="19.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <TextField fx:id="customerNumberField" prefHeight="19.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                <GridPane.margin>
                   <Insets top="25.0" />
                </GridPane.margin></TextField>
@@ -58,15 +58,16 @@
                   <Insets bottom="5.0" />
                </GridPane.margin>
             </Label>
-            <Button mnemonicParsing="false" text="Set Table" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#handleSetTable" text="Set Table" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="5.0" />
                </GridPane.margin>
             </Button>
          </children>
       </GridPane>
-      <TextArea editable="false" layoutX="14.0" layoutY="134.0" prefHeight="225.0" prefWidth="272.0" />
-      <Button layoutX="14.0" layoutY="367.0" mnemonicParsing="false" text="Get Split Bill" />
-      <Button layoutX="207.0" layoutY="367.0" mnemonicParsing="false" text="Get One Bill" />
+      <TextArea fx:id="orderText" editable="false" layoutX="14.0" layoutY="134.0" prefHeight="225.0" prefWidth="272.0" />
+      <Button layoutX="110.0" layoutY="367.0" mnemonicParsing="false" onAction="#getSplitBill" text="Get Split Bill" />
+      <Button layoutX="207.0" layoutY="367.0" mnemonicParsing="false" onAction="#getOneBill" text="Get One Bill" />
+      <Button layoutX="14.0" layoutY="367.0" mnemonicParsing="false" onAction="#handleClose" text="Close" />
    </children>
 </AnchorPane>

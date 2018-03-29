@@ -1,5 +1,9 @@
 package Restaurant.Model;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -7,8 +11,6 @@ import java.util.ArrayList;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import javax.jws.WebParam;
 
 /**
  * Represents a table at the restaurant
@@ -19,14 +21,15 @@ public class Table {
 
     private static ObservableList<Table> tables = FXCollections.observableArrayList();
 
-    private ArrayList<OrderModel> orders = new ArrayList<>();
+    private ArrayList<Order> orders = new ArrayList<>();
     private IntegerProperty number;
     private IntegerProperty numCustomers;
 
     /**
      * Creates a new Table object
      *
-     * @param number this Table's number
+     * @param number         this Table's number
+     * @param customerNumber the number of customers seated at this Table
      */
     public Table(int number, int customerNumber) {
         this.number = new SimpleIntegerProperty(number);
@@ -35,17 +38,13 @@ public class Table {
 
     }
 
+    /**
+     * Returns an ObservableList of all the Tables
+     *
+     * @return an ObservableList of all the Tables
+     */
     public static ObservableList<Table> getTables() {
         return tables;
-    }
-
-    public static Table getTable(int number) {
-        for (Table table : tables) {
-            if (table.getNumber() == number) {
-                return table;
-            }
-        }
-        return null;
     }
 
     /**
@@ -53,86 +52,158 @@ public class Table {
      * *
      * @param order the Order to be added
      */
-    public void addOrder(OrderModel order) {
+    public void addOrder(Order order) {
         orders.add(order);
     }
 
     /**
-     * Returns the total price of all Orders of this Table
+     * Prints a bill to a txt file.
      *
-     * An Order only counts towards the total price if it has been delivered.
+     * The bill contains all Orders made by this Table that have been delivered, and the bill is the sum
+     * of the prices. Taxes are included, and an auto-gratuity of 15% is added for parties of 8 or more.
      *
-     * @return the total price of the Orders of this Table
+     * @throws IOException if the file cannot be written to
      */
-    public double getTotalPrice() {
-        double total = 0;
-        for (OrderModel order : orders) {
-            if (order.getStatus().equals("Delivered")) {
-                total += order.getPrice();
+    public void printOneBill() throws IOException {
+        NumberFormat formatter = new DecimalFormat("#0.00");
+        try (PrintWriter printer = new PrintWriter(new BufferedWriter(new FileWriter("bill"+number.get()+".txt")))) {
+            printer.println("Table #" + number.get());
+            printer.println("================================");
+            double totalPrice = 0.0;
+            for (Order order : orders) {
+                if (order.getStatus().equals("Delivered")) {
+                    printer.println(order.billStringFormat());
+                    totalPrice += order.getPrice();
+                }
             }
+            printer.println("================================");
+            printer.println("Subtotal: " + formatter.format(totalPrice));
+            totalPrice *= 1.13;
+            printer.println("Total: " + formatter.format(totalPrice));
+
+            if (numCustomers.get() >= 8) {
+                totalPrice *= 1.15;
+                printer.println("Price with auto-gratuity (for 8 people or more) of 15%: " + formatter.format(totalPrice));
+            }
+
+            writeToPayments("Table #" + number.get() + ": payment for " + totalPrice);
+            printer.close();
         }
-        return total;
     }
 
     /**
-     * Returns a String representation of this Table's bill
+     * Prints a bill for a single customer to a txt file.
      *
-     * The bill contains all Orders made by this Table that have been delivered, and the bill is the sum
-     * of the prices.
+     * The bill contains all Orders made by this customer that have been delivered, and the bill is the sum
+     * of the prices. Taxes are included, and an auto-gratuity of 15% is added for parties of 8 or more.
      *
-     * @return a String representation of this Table's bill
+     * @throws IOException if the file cannot be written to
      */
-    public String getTotalBill() {
-        StringBuilder result = new StringBuilder("Table Number " + number);
-        result.append("\n");
+    public void printSplitBill() throws IOException {
         NumberFormat formatter = new DecimalFormat("#0.00");
-        for (OrderModel order : orders) {
-            if (order.getStatus().equals("Delivered")) {
-                result.append(order.getName());
-                result.append(":");
-                result.append("\n");
-                result.append(formatter.format(order.getPrice()));
-                result.append("\n");
-            }
-        }
-        result.append("Total: \n");
-        result.append(formatter.format((getTotalPrice())));
+        try (PrintWriter printer = new PrintWriter(new BufferedWriter(new FileWriter("bill" + number.get() + ".txt")))) {
+            printer.println("Table #" + number.get());
+            printer.println("================================");
+            double finalPrice = 0.0;
+            for (int i = 1; i <= numCustomers.get(); i++) {
+                double totalPrice = 0.0;
+                printer.println("Customer #" + i);
+                for (Order order : orders) {
+                    if (order.getCustomerNum() == i && order.getStatus().equals("Delivered")) {
+                        totalPrice += order.getPrice();
+                        printer.println(order.billStringFormat());
+                    }
+                }
+                printer.println();
+                printer.println("Subtotal: " + formatter.format(totalPrice));
+                totalPrice *= 1.13;
+                printer.println("Total: " + formatter.format(totalPrice));
 
-        return result.toString();
+                if (numCustomers.get() >= 8) {
+                    totalPrice *= 1.15;
+                    printer.println("Price with auto-gratuity (for 8 people or more) of 15%: " + formatter.format(totalPrice));
+                }
+                finalPrice += totalPrice;
+                printer.println("================================");
+            }
+
+            writeToPayments("Table #" + number.get() + ": payment for " + formatter.format(finalPrice));
+            printer.close();
+        }
     }
 
+    /**
+     * Writes to a file containing all payments made to the restaurant
+     *
+     * @param string       the description of the payment
+     * @throws IOException if the file cannot be written to
+     */
+    private void writeToPayments(String string) throws IOException {
+        try (FileWriter fileWriter = new FileWriter("payments.txt", true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            PrintWriter out = new PrintWriter(bufferedWriter)) {
+
+            out.println(string);
+        }
+    }
+
+    /**
+     * Clears all the orders from this Table
+     */
+    public void clearOrders() {
+        orders.clear();
+    }
+
+    /**
+     * Returns a String representation of this Table
+     *
+     * @return a String representation of this Table
+     */
     public String toString() {
         return "Table " + Integer.toString(number.get());
     }
 
-    public ArrayList<OrderModel> getOrders() {
+    /**
+     * Returns all the Orders of this Table
+     *
+     * @return all the Orders of this Table
+     */
+    public ArrayList<Order> getOrders() {
         return orders;
     }
 
-    public void setOrders(ArrayList<OrderModel> orders) {
-        this.orders = orders;
-    }
-
+    /**
+     * Returns the number of this Table as an IntegerProperty
+     *
+     * @return the number of this Table
+     */
     public IntegerProperty numberProperty() {
         return number;
     }
 
-    public void setNumber(int number) {
-        this.number.set(number);
-    }
-
-    public IntegerProperty numCustomersProperty() {
-        return numCustomers;
-    }
-
+    /**
+     * Returns the number of this Table as an integer
+     *
+     * @return the number of this Table as an integer
+     */
     public int getNumber() {
         return number.get();
     }
 
+    /**
+     * Returns the number of customers seated at this Table
+     *
+     * @return the number of customers seated at this Table
+     */
     public int getNumCustomers() {
         return numCustomers.get();
     }
 
+    /**
+     * Sets the number of customers seated at this Table
+     *
+     * @param numCustomers the new number of customers at this Table
+     */
     public void setNumCustomers(int numCustomers) {
         this.numCustomers.set(numCustomers);
     }

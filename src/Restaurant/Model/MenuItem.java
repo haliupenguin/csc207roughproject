@@ -17,30 +17,6 @@ public class MenuItem {
     private final StringProperty name;
     private final DoubleProperty price;
 
-    public ObjectProperty<HashMap<String, Integer>> ingredientsNeededProperty() {
-        return ingredientsNeeded;
-    }
-
-    public void setIngredientsNeeded(HashMap<String, Integer> ingredientsNeeded) {
-        this.ingredientsNeeded.set(ingredientsNeeded);
-    }
-
-    public StringProperty nameProperty() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name.set(name);
-    }
-
-    public DoubleProperty priceProperty() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price.set(price);
-    }
-
     /**
      * Creates a MenuItem object
      *
@@ -48,17 +24,11 @@ public class MenuItem {
      * @param name              the name of this MenuItem
      * @param price             the price of this MenuItem
      */
-    public MenuItem(HashMap<String, Integer>ingredientsNeeded, String name, double price){
+    public MenuItem(HashMap<String, Integer> ingredientsNeeded, String name, double price){
         this.ingredientsNeeded = new SimpleObjectProperty<>(ingredientsNeeded);
         this.name = new SimpleStringProperty(name);
         this.price = new SimpleDoubleProperty(price);
     }
-
-    /**
-     * Returns a HashMap of the ingredients and the quantities needed to make this Order
-     *
-     * @return the ingredients and quantities needed to make this Order
-     */
 
     /**
      * Returns a String representation of this MenuItem
@@ -71,14 +41,29 @@ public class MenuItem {
         return name.get() + " " + formatter.format(price.get());
     }
 
+    /**
+     * Returns a HashMap of String to Integer of the ingredients needed and their quantities needed to make this Order
+     *
+     * @return a HashMap of String to Integer ingredients needed and their quantities
+     */
     public HashMap<String, Integer> getIngredientsNeeded() {
         return ingredientsNeeded.get();
     }
 
+    /**
+     * Returns the name of this MenuItem
+     *
+     * @return the name of this MenuItem
+     */
     public String getName() {
         return name.get();
     }
 
+    /**
+     * Returns the price of this MenuItem
+     *
+     * @return the price of this MenuItem
+     */
     public double getPrice() {
         return price.get();
     }
@@ -95,10 +80,6 @@ public class MenuItem {
      */
     @Override
     public boolean equals(Object o) {
-        return (o instanceof MenuItem && ((MenuItem) o).getName().equals(name));
-    }
-
-    public boolean equals(String s) {
-        return name.equals(s);
+        return (o instanceof MenuItem && ((MenuItem) o).getName().equals(name.get()));
     }
 }
